@@ -3,19 +3,17 @@ import { useState } from "react";
 import "./style.module.css/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 
-
-
-
-
 export const Login = () => {
-  const [loginData, setLoginData] = useState("");
+  const [loginData, setLoginData] = useState({
+    userName: "",
+    passWord: "",
+  });
   const navigate = useNavigate();
-
 
   return (
     <div>
       <div className="login_main_container">
-        <form 
+        <form
         // onSubmit={handleLogin}
         >
           <h2 style={{ fontWeight: "bold" }}>Login</h2>
@@ -23,6 +21,8 @@ export const Login = () => {
             className="inpu1"
             type="text"
             name="userName"
+            value={loginData.userName}
+            onChange={handleChange}
             placeholder="UserName"
             required
           />
@@ -30,8 +30,10 @@ export const Login = () => {
           <div className="show_hide_password_div">
             <input
               className="inpu2"
-              type= "password"
+              type="password"
               name="passWord"
+              value={loginData.passWord}
+              onChange={handleChange}
               placeholder="Password"
               required
             />
