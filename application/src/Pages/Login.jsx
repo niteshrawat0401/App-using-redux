@@ -18,7 +18,7 @@ export const Login = () => {
         <form 
         // onSubmit={handleLogin}
         >
-          <h3 style={{ fontWeight: "bold" }}>Login</h3>
+          <h2 style={{ fontWeight: "bold" }}>Login</h2>
           <input
             className="inpu1"
             type="text"

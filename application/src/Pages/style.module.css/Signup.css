@@ -1,41 +1,41 @@
 .signup_main_cont {
     box-shadow: 2px 1px 2px 1px;
-    height: 24rem;
+    height: 28rem;
     width: 20%;
     margin: auto;
     margin-top: 3rem;
     border-radius: 6px;
   }
   .inp1 {
-    width: 70%;
+    width: 80%;
     height: 2rem;
     border-radius: 5px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border: 1px solid #d1c295;
   }
   .inp2 {
-    width: 70%;
+    width: 80%;
     height: 2rem;
     border-radius: 5px;
     margin-top: 2rem;
     border: 1px solid #d1c295;
   }
   .inp3 {
-    width: 70%;
+    width: 80%;
     height: 2rem;
     border-radius: 5px;
     margin-top: 2rem;
     border: 1px solid #d1c295;
   }
   .inp4 {
-    width: 70%;
+    width: 80%;
     height: 2rem;
     border-radius: 5px;
     margin-top: 2rem;
     border: 1px solid #d1c295;
   }
   .inp5 {
-    width: 70%;
+    width: 79%;
     height: 2.2rem;
     border-radius: 5px;
     margin-top: 2rem;
