@@ -22,7 +22,7 @@ export const Login = () => {
             type="text"
             name="userName"
             value={loginData.userName}
-            onChange={handleChange}
+            // onChange={handleChange}
             placeholder="UserName"
             required
           />
@@ -33,7 +33,7 @@ export const Login = () => {
               type="password"
               name="passWord"
               value={loginData.passWord}
-              onChange={handleChange}
+              // onChange={handleChange}
               placeholder="Password"
               required
             />

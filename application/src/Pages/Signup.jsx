@@ -23,7 +23,7 @@ export const Signup = () => {
             type="text"
             name="userName"
             value={signData.userName}
-            onChange={handleChange}
+            // onChange={handleChange}
             placeholder="UserName"
             required
           />
@@ -33,7 +33,7 @@ export const Signup = () => {
             type="password"
             name="passWord"
             value={signData.passWord}
-            onChange={handleChange}
+            // onChange={handleChange}
             placeholder="Password"
             required
           />
@@ -43,7 +43,7 @@ export const Signup = () => {
             type="text"
             name="email"
             value={signData.email}
-            onChange={handleChange}
+            // onChange={handleChange}
             placeholder="Email"
             required
           />
