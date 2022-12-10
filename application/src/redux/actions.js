@@ -1,7 +1,7 @@
 import { Add_TO_CART,  GET_DATA, REMOVE_CART, REQ_DATA, ERR_DATA } from "./actiontype/actionType";
 import axios from "axios"
 
-function getData(dispatch){
+export const getData=(dispatch)=>{
     dispatch(req_data());
     axios.get(`https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies`)
     .then((res)=>
