@@ -4,12 +4,12 @@ import axios from "axios"
 function getData(dispatch){
     dispatch(req_data());
     axios.get(`https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies`)
-    .then((res)=>{
+    .then((res)=>
         dispatch({
-            type: GET_DATA,
+            type: GET_DATA, 
             payload: res.data
         })
-    })
+        )
     .catch((err)=>{
         dispatch(error_data(err.message))
     })
@@ -19,6 +19,7 @@ export const req_data= ()=>({
     type: REQ_DATA
 })
 
-export const  error_data= ()=>({
-    type: ERR_DATA
+export const  error_data= (err)=>({
+    type: ERR_DATA,
+    payload: err
 })
