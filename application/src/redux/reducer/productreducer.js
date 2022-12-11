@@ -7,7 +7,7 @@ import {
     GET_PRODUCT_DETAILS_RESET
   } from "../actiontype/actionType";
 
-  export const getProductdetailreducer = (state = { product: {} }, action) => {
+  export const Productdetreducer = (state = { product: {} }, action) => {
     switch (action.type) {
       case REQ_DATA:
         return {

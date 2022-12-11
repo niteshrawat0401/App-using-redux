@@ -86,28 +86,3 @@ const initial = {
 //       return state;
 //   }
 // };
-
-// export const getProductdetailreducer = (state = { product: {} }, action) => {
-//   switch (action.type) {
-//     case REQ_DATA:
-//       return {
-//         loading: true,
-//       };
-//     case GET_DATA:
-//       return {
-//         loading: false,
-//         product: action.payload,
-//       };
-//     case ERR_DATA:
-//       return {
-//         loading: false,
-//         error: action.payload,
-//       };
-//     case GET_PRODUCT_DETAILS_RESET:
-//       return {
-//         product: {},
-//       };
-//       default:
-//         return state
-//   }
-// };

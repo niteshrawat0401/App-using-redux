@@ -1,7 +1,7 @@
 import {applyMiddleware, legacy_createStore as createStore, compose, combineReducers} from "redux"
 import thunk from "redux-thunk"
 import {  getProductreducer } from "./reducer/datareducer";
-import { getProductdetailreducer } from "./reducer/productreducer";
+import { Productdetreducer } from "./reducer/productreducer";
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -17,7 +17,7 @@ const composeEnhancers =
 
         const rootReducer= combineReducers({
             getProduct:  getProductreducer,
-            getProductDetails: getProductdetailreducer
+            // ProductDetails: Productdetreducer
         })
 
     export const store = createStore(rootReducer, enhancer);
