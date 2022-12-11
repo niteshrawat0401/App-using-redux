@@ -1,16 +1,16 @@
 import React from "react";
 import { useEffect } from "react";
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "../redux/actions/dataaction";
-import style from "./Home.module.css"
+import style from "./Home.module.css";
+import { useNavigate, Link } from "react-router-dom";
 
 export const Home = () => {
-  const [data, setData] = useState();
+  const navigate = useNavigate();
   const { products, isloading, isError } = useSelector(
     (state) => state.getProduct
   );
-  console.log(products);
+  // console.log(products);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,23 +18,34 @@ export const Home = () => {
     getData(dispatch);
   }, [dispatch]);
 
-  const addToCart=()=>{
-    
-  }
+  const addToCart = () => {};
 
   return (
-    <div className={style.mainContainer}>
-      {products.map((ele,index) => {
-        return (
-          <div className={style.innerContainer} key={index}> 
-            <img src={ele.image} alt="" />
-            <p>Runtime: <span>{ele.title}</span></p>
-            <p>Title: <span>{ele.category}</span></p>
-            <p>Year: <span>{ele.price}</span></p>
-            <button onClick={addToCart}>Add to cart</button>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div className={style.mainContainer}>
+        {products.map((ele) => {
+          return (
+            <div className={style.innerContainer} key={ele.id}>
+              <Link to={`product/${ele.id}`}>
+                <img src={ele.image} alt="" />
+                <p>
+                  Title: <span>{ele.title}</span>
+                </p>
+                <p>
+                  Category: <span>{ele.category}</span>
+                </p>
+                <p>
+                  Price: <span>{ele.price}</span>
+                </p>
+                <button onClick={addToCart}>Add to cart</button>
+              </Link>
+            </div>
+          );
+        })}
+        {/* <div className={style.mainContainer}> */}
+        {/* <Products products={products} /> */}
+        {/* </div> */}
+      </div>
+    </>
   );
 };
