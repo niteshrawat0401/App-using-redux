@@ -1,0 +1,19 @@
+.mainContainer{
+    /* border: 1px solid red; */
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,22%);
+    justify-content: center;
+    gap: 14px;
+}
+.innerContainer{
+    border: 1px solid red;
+    border-radius: 5px;
+    height: 25rem;
+
+}
+.innerContainer img{
+    margin-top: 2rem;
+    height: 10rem;
+    width: 40%;
+}
