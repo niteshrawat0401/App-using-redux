@@ -45,13 +45,12 @@ export const getProductreducer = (state = initialstate, { type, payload }) => {
   }
 };
 
-
 const initial = {
   data: [],
   isloading: false,
   isError: false,
   // filterData: [],
-  product: [],
+  product: {},
 };
 
 export const getProductdetailreducer = (state = initial, { type, payload }) => {
