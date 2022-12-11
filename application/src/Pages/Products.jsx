@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import style from "./../Home/Home.module.css";
+import style from "./style.module.css/Product.module.css";
 import { useEffect } from "react";
-import { getProductDetails } from "../redux/actions/dataaction";
+// import { getProductDetails } from "../redux/actions/dataaction";
 import axios from "axios";
 import { useState } from "react";
 export const Products = () => {
@@ -40,8 +40,9 @@ export const Products = () => {
   }
 
   return (
-    <div>
+    <div className={style.product_main_container}>
       <img src={data.image} alt="" />
+      <div className={style.product_inner_container}>
       <p>
         Title: <span>{data.title}</span>
       </p>
@@ -49,8 +50,13 @@ export const Products = () => {
         Category: <span>{data.category}</span>
       </p>
       <p>
+        Description: <span>{data.description}</span>
+      </p>
+      <p>
         Price: <span>{data.price}</span>
       </p>
+      <button>Add to Cart</button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,15 @@
+.product_main_container{
+    /* border: 1px solid red; */
+    width:55%;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    display: flex;
+}
+.product_inner_container{
+    margin-top: 2rem;
+    /* border: 1px solid red; */
+    /* width: ; */
+}
+img{
+    height: 12rem;
+}
