@@ -7,7 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const { products, isloading, isError } = useSelector(
+  const { products } = useSelector(
     (state) => state.getProduct
   );
   // console.log(products);

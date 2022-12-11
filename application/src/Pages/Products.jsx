@@ -1,12 +1,27 @@
 import React from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux"
 import style from "./../Home/Home.module.css";
-export const Products = ({ products }) => {
+import { useEffect } from "react";
+import { getProductDetails } from "../redux/actions/dataaction";
+export const Products = () => {
+  // const {product, isloading, isError}= useSelector((state)=> state.getProductDetails.product)
+  // console.log(product);
   const {id}= useParams()
-  console.log(id);
+  // console.log(id);
   const navigate = useNavigate();
+  const dispatch= useDispatch();
+  // useEffect(() => {
+  //   if (product && id !== product.id)
+  //    dispatch(getProductDetails(id));
+  // }, [dispatch, id]);
+
+  // useEffect(()=>{
+  //       getProductDetails(dispatch(id))
+  // })
   return (
     <>
+    Produt
       {/* {products.map((ele) => (
         <div className={style.innerContainer} key={ele.id} > 
         <Link to={`product/${ele.id}`}>
