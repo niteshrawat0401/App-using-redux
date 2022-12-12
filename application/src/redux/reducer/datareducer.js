@@ -2,8 +2,6 @@ import {
   GET_DATA,
   ERR_DATA,
   REQ_DATA,
-  Add_TO_CART,
-  REMOVE_CART,
   GET_PRODUCT_DETAILS_RESET
 } from "../actiontype/actionType";
 
@@ -45,40 +43,9 @@ export const getProductreducer = (state = initialstate, { type, payload }) => {
       return state;
   }
 };
-const initicart={
-  isloading:false,
-  isError:false,
-  cartData:[]
-}
-export const cartDatareducer= (state = initicart, {type, payload})=>{
-  switch(type){
-    case REQ_DATA:
-      return{
-        ...state,
-        isloading:true,
-        isError:false,
-        cartData:[]
-      }
-  case ERR_DATA:
-    return {
-      ...state,
-      isloading: false,
-      isError: true,
-      filterData: [],
-      cartData: [],
-    };
-  case GET_DATA:
-    return {
-      ...state,
-      isloading: false,
-      isError: false,
-      filterData: [],
-      cartData: payload,
-    };
-  default:
-    return state;
-}
-}
+
+
+
 const initial = {
   // isloading: false,
   // isError: false,

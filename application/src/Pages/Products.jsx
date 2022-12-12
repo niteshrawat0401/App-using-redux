@@ -8,7 +8,8 @@ import axios from "axios";
 import { useState } from "react";
 export const Products = () => {
   const [data, setData] = useState([]);
-  // const {product, isloading, isError}= useSelector((state)=> state.getProductDetails.product)
+  const [quantity, setQuantity]= useState(1);
+  // const {cartData, isloading, isError}= useSelector((state)=> state.getProductDetails.cartData)
   // console.log(product);
   const { id } = useParams();
   // console.log(id);
@@ -19,9 +20,7 @@ export const Products = () => {
   //    dispatch(getProductDetails(id));
   // }, [dispatch, id]);
 
-  // useEffect(()=>{
-  //       getProductDetails(dispatch(id))
-  // })
+
 
   useEffect(() => {
     getproductdet();

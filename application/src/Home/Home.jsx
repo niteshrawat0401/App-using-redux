@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getData } from "../redux/actions/dataaction";
+import { getData } from "../redux/actions/productaction";
 import style from "./Home.module.css";
 import { useNavigate, Link } from "react-router-dom";
 
