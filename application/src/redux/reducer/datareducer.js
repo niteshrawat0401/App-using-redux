@@ -3,6 +3,7 @@ import {
   ERR_DATA,
   REQ_DATA,
   SORT_DATA,
+  FILTER_DATA,
   GET_PRODUCT_DETAILS_RESET
 } from "../actiontype/actionType";
 
@@ -55,6 +56,15 @@ export const getProductreducer = (state = initialstate, { type, payload }) => {
             }
           })
         }
+        case FILTER_DATA:
+          return{
+            ...state,
+            isloading:false,
+            isError:false,
+            filterData: state.products.filter((item)=>{
+              return payload == item.category 
+            })
+          }
     default:
       return state;
   }

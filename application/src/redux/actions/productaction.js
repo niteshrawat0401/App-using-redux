@@ -6,7 +6,8 @@ import {
   GET_PRODUCT_DETAILS_REQUEST,
   GET_PRODUCT_DETAILS_SUCCESS,
   GET_PRODUCT_DETAILS_FAIL,
-  GET_PRODUCT_DETAILS_RESET
+  GET_PRODUCT_DETAILS_RESET,
+  FILTER_DATA
 } from "../actiontype/actionType";
 import axios from "axios";
 const URL = 'https://fakestoreapi.com';
@@ -82,6 +83,11 @@ export const getProductDetails = (id) => async (dispatch) => {
 
 export const sortProducts=(payload)=>({
   type: SORT_DATA,
+  payload
+})
+
+export const filterProducts=(payload)=>({
+  type: FILTER_DATA,
   payload
 })
 

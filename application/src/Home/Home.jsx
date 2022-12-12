@@ -1,16 +1,16 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getData, sortProducts } from "../redux/actions/productaction";
+import { filterProducts, getData, sortProducts } from "../redux/actions/productaction";
 import style from "./Home.module.css";
 import { useNavigate, Link } from "react-router-dom";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const { products } = useSelector(
+  const { products,filterData } = useSelector(
     (state) => state.getProduct
   );
-  // console.log(products);
+  console.log(filterData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,19 +22,22 @@ export const Home = () => {
   const handleSort = (e) => {
     dispatch(sortProducts(e.target.value))
   };
+  const handleFilter = (e) => {
+    dispatch(filterProducts(e.target.id))
+  };
 
 
   return (
     <>
     <div className={style.sort_filter_div}>
-      <div><select id="" onChange={handleSort}>
+      <div><select  onChange={handleSort}>
         <option value="">Sort By Price</option>
         <option value="asc">Low to High</option>
         <option value="dec">High to Low</option>
       </select>
       </div>
       <div>
-      <select id="">
+      <select onChange={()=>handleFilter(filterData.id)}>
         <option value="">Filter By Category</option>
         <option value="Men">Men</option>
         <option value="Women">Women</option>
