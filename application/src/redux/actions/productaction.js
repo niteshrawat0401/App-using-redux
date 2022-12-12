@@ -2,6 +2,7 @@ import {
   GET_DATA,
   REQ_DATA,
   ERR_DATA,
+  SORT_DATA,
   GET_PRODUCT_DETAILS_REQUEST,
   GET_PRODUCT_DETAILS_SUCCESS,
   GET_PRODUCT_DETAILS_FAIL,
@@ -79,4 +80,8 @@ export const getProductDetails = (id) => async (dispatch) => {
 // }
 
 
+export const sortProducts=(payload)=>({
+  type: SORT_DATA,
+  payload
+})
 

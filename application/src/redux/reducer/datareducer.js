@@ -2,6 +2,7 @@ import {
   GET_DATA,
   ERR_DATA,
   REQ_DATA,
+  SORT_DATA,
   GET_PRODUCT_DETAILS_RESET
 } from "../actiontype/actionType";
 
@@ -39,6 +40,21 @@ export const getProductreducer = (state = initialstate, { type, payload }) => {
         filterData: [],
         products: payload,
       };
+      case SORT_DATA:
+        return{
+          ...state,
+          isloading:false,
+          isError:false,
+          filterData:[],
+          products: state.products.sort((a,b)=>{
+            if(payload =="asc"){
+                return a.price - b.price 
+            } 
+            else{
+                return b.price - a.price
+            }
+          })
+        }
     default:
       return state;
   }

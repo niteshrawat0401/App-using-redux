@@ -6,6 +6,26 @@
     justify-content: center;
     gap: 14px;
 }
+.sort_filter_div{
+    /* border: 1px solid red; */
+    height: 2rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+.sort_filter_div div{
+    /* border: 1px solid red; */
+    width: 18%;
+}
+.sort_filter_div div select{
+    /* border: 1px solid red; */
+    height: 2rem;
+    width: 55%;
+    border-radius: 5px;
+}
 .innerContainer{
     border: 1px solid red;
     border-radius: 5px;

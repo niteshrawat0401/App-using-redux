@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getData } from "../redux/actions/productaction";
+import { getData, sortProducts } from "../redux/actions/productaction";
 import style from "./Home.module.css";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -19,9 +19,30 @@ export const Home = () => {
   }, [dispatch]);
 
   const addToCart = () => {};
+  const handleSort = (e) => {
+    dispatch(sortProducts(e.target.value))
+  };
+
 
   return (
     <>
+    <div className={style.sort_filter_div}>
+      <div><select id="" onChange={handleSort}>
+        <option value="">Sort By Price</option>
+        <option value="asc">Low to High</option>
+        <option value="dec">High to Low</option>
+      </select>
+      </div>
+      <div>
+      <select id="">
+        <option value="">Filter By Category</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Jewelery">Jewelery</option>
+        <option value="Electronic">Electronic</option>
+      </select>
+      </div>
+    </div>
       <div className={style.mainContainer}>
         {products.map((ele) => {
           return (
