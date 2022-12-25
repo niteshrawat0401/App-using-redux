@@ -10,7 +10,7 @@ export const Home = () => {
   const { products,filterData } = useSelector(
     (state) => state.getProduct
   );
-  console.log(filterData);
+  // console.log(filterData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Home = () => {
     dispatch(sortProducts(e.target.value))
   };
   const handleFilter = (e) => {
-    dispatch(filterProducts(e.target.id))
+    dispatch(filterProducts(filterData))
   };
 
 
@@ -37,7 +37,7 @@ export const Home = () => {
       </select>
       </div>
       <div>
-      <select onChange={()=>handleFilter(filterData.id)}>
+      <select onChange={(e)=>handleFilter(e.target.value)}>
         <option value="">Filter By Category</option>
         <option value="Men">Men</option>
         <option value="Women">Women</option>
@@ -61,7 +61,7 @@ export const Home = () => {
                 <p>
                   Price: <span>{ele.price}</span>
                 </p>
-                <button onClick={addToCart}>Add to cart</button>
+                {/* <button onClick={addToCart}>Add to cart</button> */}
               </Link>
             </div>
           );

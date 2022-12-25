@@ -30,13 +30,13 @@ import {
 //   }
 // };
 
-const initicart={
+const initialpro={
   isloading:false,
   isError:false,
   product:[]
 }
 
-export const Productdetreducer= (state =initicart, {type, payload})=>{
+export const Productdetreducer= (state =initialpro, {type, payload})=>{
   switch(type){
   case REQ_DATA:
     return {

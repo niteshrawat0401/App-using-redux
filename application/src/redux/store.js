@@ -1,7 +1,7 @@
 import {applyMiddleware, legacy_createStore as createStore, compose, combineReducers} from "redux"
 import thunk from "redux-thunk"
 import { cartDatareducer } from "./reducer/cartReducer";
-import { getProductreducer } from "./reducer/datareducer";
+import { getProductreducer } from "./reducer/productsreducer";
 import { Productdetreducer } from "./reducer/productdetailreducer";
 
 

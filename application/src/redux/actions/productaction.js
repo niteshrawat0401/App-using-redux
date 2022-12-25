@@ -10,12 +10,12 @@ import {
   FILTER_DATA
 } from "../actiontype/actionType";
 import axios from "axios";
-const URL = 'https://fakestoreapi.com';
+const URL = 'https://fakestoreapi.com/products';
 
 export const getData = (dispatch) => {
   dispatch(req_data());
   axios
-    .get(`${URL}/products`)
+    .get(URL)
     .then((res) =>
       dispatch({
         type: GET_DATA,
@@ -54,12 +54,12 @@ export const error_data = (err) => ({
 
 export const getProductDetails = (id) => async (dispatch) => {
   try {
-      dispatch({ type: GET_PRODUCT_DETAILS_REQUEST });
-      const { data } = await axios.get(`${URL}/product/${id}`);
-      //console.log(data);
-
+      // dispatch({ type: GET_PRODUCT_DETAILS_REQUEST });
+      const  data  = await axios.get(`https://fakestoreapi.com/products/${id}`);
+      
+    console.log("id",id);
       dispatch({ type: GET_PRODUCT_DETAILS_SUCCESS, payload: data });
-
+      console.log("data in getPRoduct action",data);
   } catch (error) {
       dispatch({ type: GET_PRODUCT_DETAILS_FAIL, payload: error.response});
 
@@ -79,7 +79,6 @@ export const getProductDetails = (id) => async (dispatch) => {
 //         dispatch({type: ERR_DATA, payload: error.message})
 //     }
 // }
-
 
 export const sortProducts=(payload)=>({
   type: SORT_DATA,
